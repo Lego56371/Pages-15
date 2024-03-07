@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
-<main>
-  <h1>All hail the Clipboard API</h1>
-  <p>Florid, wordly code exposition.</p>
-  <pre><code class="language-css">.some-box {
-  width: 20px;
-  height: 20px;
-  background: black;
-  margin-bottom: 1.5rem;
-}
-</code></pre>
-  <p>And I'll tell you another thing..</p>
-  <pre><code class="language-html">&lt;div class="box drop3"&gt;&lt;/div&gt;</code></pre>
-  <p>No! Not finished..</p>
-  <pre><code class="language-javascript">console.log("finished");</code></pre>
-</main>
+  <h2>Basic Code Block</h2>
+<div class="highlight">
+  <pre class="chroma">
+    <code class="language-python" data-lang="python">
+def test_new_user(db, email, password):
+    new_user = User(email=email, password=password)
+    db.session.add(new_user)
+    db.session.commit()
+    user_exists = User.query.filter_by(email=email).first()
+    assert user_exists
+    </code>
+  </pre>
+</div>
+
+<h2>Code Block with Line Numbers</h2>
+<div class="highlight">
+  <div class="chroma">
+    <table class="lntable">
+      <tbody>
+        <tr>
+          <td class="lntd">
+            <pre class="chroma"><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10</code></pre>
+          </td>
+          <td class="lntd">
+            <pre class="chroma">
+              <code class="language-python" data-lang="python">
+import os
+
+from flask_api_tutorial import create_app, db
+
+app = create_app(os.getenv("FLASK_ENV", "development"))
+
+
+@app.shell_context_processor
+def shell():
+    return {"db": db}</code>
+            </pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </html>
